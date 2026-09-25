@@ -4,6 +4,17 @@
 
 A [CBOR (RFC 7049 Concise Binary Object Representation)](http://cbor.io) decoder and encoder in Swift. Encode directly from Swift types or use a wrapper object. Decode to a CBOR value type that can be accessed with native Swift subscripting and expressed with the equivalent literal notation.
 
+### Update - Build
+
+Run a test build using, also note the dependencies are fixed
+
+```sh
+# use xcodebuild -list to show the schemes
+xcodebuild build-for-testing \
+  -scheme SwiftCBOR \
+  -destination 'platform=iOS Simulator,name=iPhone 17'
+```
+
 - A fully cross-platform Swift 5.x package!
 - `Codable` support!
 - Negative integers are decoded as `NegativeInt(UInt)`, where the actual number is `-1 - i` (CBOR's negative integers can be larger than 64-bit signed integers).
